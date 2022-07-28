@@ -5,28 +5,22 @@
  */
 package baccarat.ui;
 
-import ao.co.proevolution.baccarat.bean.CorBean;
 import ao.co.proevolution.baccarat.bean.LogApostaOquestradorBean;
 import ao.co.proevolution.baccarat.bean.MesaBean;
 import ao.co.proevolution.baccarat.bean.OquestradorBean;
 import ao.co.proevolution.baccarat.enumerador.StatusMesa;
 import ao.co.proevolution.baccarat.enumerador.TipoMensagem;
 import ao.co.proevolution.baccarat.model.Aposta;
-import ao.co.proevolution.baccarat.model.Cor;
 import ao.co.proevolution.baccarat.model.LogApostaOquestrador;
 import ao.co.proevolution.baccarat.model.Mesa;
 import ao.co.proevolution.baccarat.model.Oquestrador;
-import ao.co.proevolution.baccarat.util.ComputerInfoUtil;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import ao.co.proevolution.baccarat.util.DefinirCorUtil;
 
 /**

@@ -12,7 +12,7 @@ import java.awt.Color;
  */
 public class Constants {
     
-    public static final Color BG_PRINCIPAL = new Color(51,51,51);
+    public static final Color BG_PRINCIPAL = new Color(159,158,156);
 
     public static final Integer MATRIZ_ROWS_PANEL1 = 6;
     public static final Integer WIDTH_PANEL = 1267;

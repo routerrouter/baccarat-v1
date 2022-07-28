@@ -361,6 +361,7 @@ public class MainTable extends javax.swing.JFrame {
     }
 
     public void setar2(ImageIcon icon) {
+        System.out.println("icon : " + icon);
         try {
             jogada(icon);
         } catch (IndexOutOfBoundsException ex) {
@@ -371,12 +372,12 @@ public class MainTable extends javax.swing.JFrame {
 
     public void setarTotais() {
         jLabelTotal.setText("Total:" + String.valueOf(total_count));
-        jLabelBanker.setText(String.valueOf(b_count));
-        jLabelPlayer.setText(String.valueOf(p_count));
-        jLabelTie.setText(String.valueOf(tie_count));
-        jLabelNatural.setText(String.valueOf(natural_count));
-        jLabelp_pair.setText(String.valueOf(pp_count));
-        jLabelb_pair.setText(String.valueOf(bp_count));
+        jLabelBanker.setText("Banker:" + String.valueOf(b_count));
+        jLabelPlayer.setText("Player:" + String.valueOf(p_count));
+        jLabelTie.setText("Tie:" + String.valueOf(tie_count));
+        jLabelNatural.setText("Natural:" + String.valueOf(natural_count));
+//        jLabelp_pair.setText("P.Pair:" + String.valueOf(pp_count));
+//        jLabelb_pair.setText("B.Pair:" + String.valueOf(bp_count));
     }
 
     public void paresPlayer() {
@@ -723,6 +724,7 @@ public class MainTable extends javax.swing.JFrame {
         }
 
         JScrollPane panelPane = new JScrollPane(panelPrincipal);
+        panelPane.setAutoscrolls(true);
         panelPane.setPreferredSize(new Dimension(Constants.WIDTH_PANEL, Constants.HEIGTH_PANEL));
 
         jPanelPrincipal.add(panelPane);
@@ -979,13 +981,13 @@ public class MainTable extends javax.swing.JFrame {
         panel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 242, 242), 15, false));
         painelGame3.add(panel1, BorderLayout.WEST);
 
-        JPanel panel3 = new JPanel();
-        panel3.setBackground(Constants.BG_PRINCIPAL);
-        panel3.setLayout(new GridLayout(0, 3));
-        panel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 242, 242), 5, false));
+        JPanel panel2 = new JPanel();
+        panel2.setBackground(Constants.BG_PRINCIPAL);
+        panel2.setLayout(new GridLayout(0, 3));
+        panel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 242, 242), 5, false));
         
-        createPanel2ForPanel3(panel3);
-        painelGame3.add(panel3, BorderLayout.CENTER);
+        createPanel2ForPanel3(panel2);
+        painelGame3.add(panel2, BorderLayout.CENTER);
     }
     
     
@@ -1048,16 +1050,17 @@ public class MainTable extends javax.swing.JFrame {
         jLabelPlayer = new javax.swing.JLabel();
         jLabelTie = new javax.swing.JLabel();
         jLabelNatural = new javax.swing.JLabel();
-        jLabelb_pair = new javax.swing.JLabel();
-        jLabelp_pair = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         panelInfoJogo = new javax.swing.JPanel();
         lblMesa = new javax.swing.JLabel();
         lblMinimoAposta = new javax.swing.JLabel();
         lblMaximoAposta = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Baccarat-Game");
+        setBackground(new java.awt.Color(120, 123, 119));
 
         panelRodape.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -1081,7 +1084,7 @@ public class MainTable extends javax.swing.JFrame {
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        jPanelPrincipal.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelPrincipal.setBackground(new java.awt.Color(120, 123, 119));
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
@@ -1091,7 +1094,7 @@ public class MainTable extends javax.swing.JFrame {
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 407, Short.MAX_VALUE)
+            .addGap(0, 384, Short.MAX_VALUE)
         );
 
         a2.setBackground(new java.awt.Color(8, 6, 6));
@@ -1105,75 +1108,65 @@ public class MainTable extends javax.swing.JFrame {
         jLabelTotal.setText("   Total: 0");
         jLabelTotal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setPreferredSize(new java.awt.Dimension(160, 37));
-        a2.add(jLabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1024, 2, 146, 66));
+        a2.add(jLabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 2, 230, 66));
 
-        jLabelBanker.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        jLabelBanker.setForeground(new java.awt.Color(204, 0, 51));
+        jLabelBanker.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 36)); // NOI18N
+        jLabelBanker.setForeground(new java.awt.Color(250, 75, 75));
         jLabelBanker.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelBanker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/banker_chines.png"))); // NOI18N
         jLabelBanker.setText("Banker: 0");
-        jLabelBanker.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelBanker.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jLabelBanker.setPreferredSize(new java.awt.Dimension(80, 40));
-        a2.add(jLabelBanker, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 156, 66));
+        a2.add(jLabelBanker, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 240, 66));
 
-        jLabelPlayer.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        jLabelPlayer.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelPlayer.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 36)); // NOI18N
+        jLabelPlayer.setForeground(new java.awt.Color(75, 75, 243));
         jLabelPlayer.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/player_chines.png"))); // NOI18N
         jLabelPlayer.setText("Player: 0");
-        jLabelPlayer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelPlayer.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jLabelPlayer.setPreferredSize(new java.awt.Dimension(80, 40));
-        a2.add(jLabelPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2, 158, 66));
+        a2.add(jLabelPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 2, 200, 66));
 
-        jLabelTie.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        jLabelTie.setForeground(new java.awt.Color(0, 204, 51));
+        jLabelTie.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 36)); // NOI18N
+        jLabelTie.setForeground(new java.awt.Color(35, 125, 24));
         jLabelTie.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelTie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/tie_chines.png"))); // NOI18N
         jLabelTie.setText("Tie: 0");
-        jLabelTie.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelTie.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jLabelTie.setPreferredSize(new java.awt.Dimension(80, 40));
-        a2.add(jLabelTie, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 2, 141, 66));
+        a2.add(jLabelTie, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 2, 190, 66));
 
-        jLabelNatural.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        jLabelNatural.setForeground(new java.awt.Color(255, 204, 0));
+        jLabelNatural.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 36)); // NOI18N
+        jLabelNatural.setForeground(new java.awt.Color(255, 251, 0));
         jLabelNatural.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelNatural.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/natural_chines.png"))); // NOI18N
         jLabelNatural.setText("Natural: 0");
-        jLabelNatural.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelNatural.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jLabelNatural.setPreferredSize(new java.awt.Dimension(80, 40));
-        a2.add(jLabelNatural, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 2, 182, 66));
-
-        jLabelb_pair.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        jLabelb_pair.setForeground(new java.awt.Color(204, 0, 51));
-        jLabelb_pair.setText("B.Pair: 0");
-        jLabelb_pair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        a2.add(jLabelb_pair, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 2, 175, 66));
-
-        jLabelp_pair.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        jLabelp_pair.setForeground(new java.awt.Color(0, 102, 204));
-        jLabelp_pair.setText("P.Pair: 0");
-        jLabelp_pair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        a2.add(jLabelp_pair, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 2, 166, 66));
-
-        jLabel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        a2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 66));
+        a2.add(jLabelNatural, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 2, 260, 66));
 
         panelInfoJogo.setBackground(new java.awt.Color(0, 0, 0));
         panelInfoJogo.setPreferredSize(new java.awt.Dimension(0, 48));
 
-        lblMesa.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
-        lblMesa.setForeground(new java.awt.Color(255, 255, 255));
+        lblMesa.setFont(new java.awt.Font("Franklin Gothic Book", 0, 36)); // NOI18N
+        lblMesa.setForeground(new java.awt.Color(186, 185, 186));
         lblMesa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons/btn/icons8-filtro-vazio-30.png"))); // NOI18N
+        lblMesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/mesa_chines.png"))); // NOI18N
         lblMesa.setText(" TABLE: MPBVIP-02");
 
-        lblMinimoAposta.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
-        lblMinimoAposta.setForeground(new java.awt.Color(255, 255, 255));
+        lblMinimoAposta.setFont(new java.awt.Font("Franklin Gothic Book", 0, 36)); // NOI18N
+        lblMinimoAposta.setForeground(new java.awt.Color(186, 185, 186));
         lblMinimoAposta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMinimoAposta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons/btn/icons8-dinheiro-32.png"))); // NOI18N
+        lblMinimoAposta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/minimo_chines.png"))); // NOI18N
         lblMinimoAposta.setText("MIN: $ 200");
 
-        lblMaximoAposta.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
-        lblMaximoAposta.setForeground(new java.awt.Color(255, 255, 255));
-        lblMaximoAposta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMaximoAposta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons/btn/icons8-dinheiro-32.png"))); // NOI18N
+        lblMaximoAposta.setFont(new java.awt.Font("Franklin Gothic Book", 0, 36)); // NOI18N
+        lblMaximoAposta.setForeground(new java.awt.Color(186, 185, 186));
+        lblMaximoAposta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblMaximoAposta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baccarat/icons2/maximo_chines.png"))); // NOI18N
         lblMaximoAposta.setText("MÁX: $ 6,000");
+        lblMaximoAposta.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout panelInfoJogoLayout = new javax.swing.GroupLayout(panelInfoJogo);
         panelInfoJogo.setLayout(panelInfoJogoLayout);
@@ -1182,9 +1175,9 @@ public class MainTable extends javax.swing.JFrame {
             .addGroup(panelInfoJogoLayout.createSequentialGroup()
                 .addComponent(lblMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblMinimoAposta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblMaximoAposta, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblMinimoAposta, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMaximoAposta, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         panelInfoJogoLayout.setVerticalGroup(
@@ -1192,11 +1185,19 @@ public class MainTable extends javax.swing.JFrame {
             .addGroup(panelInfoJogoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelInfoJogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(lblMinimoAposta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblMaximoAposta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblMaximoAposta, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1267,14 +1268,14 @@ public class MainTable extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel a2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelBanker;
     private javax.swing.JLabel jLabelNatural;
     private javax.swing.JLabel jLabelPlayer;
     private javax.swing.JLabel jLabelTie;
     private javax.swing.JLabel jLabelTotal;
-    private javax.swing.JLabel jLabelb_pair;
-    private javax.swing.JLabel jLabelp_pair;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JLabel lblMaximoAposta;
     private javax.swing.JLabel lblMesa;
